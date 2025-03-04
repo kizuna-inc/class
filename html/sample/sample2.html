@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form id="form-sub">
+    <input type="text" placeholder="a">
+    <input type="text" placeholder="b">
+    <button type="submit">Enter</button>
+  </form>
+
+  <div id="res"></div>
+
+  <script>
+    document.querySelector('#form-sub').addEventListener('submit', (ev) => {
+      run(ev)
+    })
+
+    const run = (ev) => {
+      ev.preventDefault();
+
+      const elm = document.querySelectorAll('input[type=text]')
+      let i = 1
+      document.querySelector('#res').innerHTML = ''
+      
+      elm.forEach((e) => {
+        document.querySelector('#res').innerHTML += 'element ' + i + ' = ' + e.value + '<br/>'
+        
+        i = i + 1
+      })
+    }
+  </script>
+</body>
+</html>
