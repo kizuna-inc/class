@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="nav"></div>
+
+    <script>
+      // fetch("./menu.html")
+      //   .then((resp) => resp.text())
+      //   .then((resp) => (document.querySelector("#nav").innerHTML = resp))
+
+      async function menu() {
+        const call = await fetch('./menu.html')
+        const data = await call.text()
+
+        document.querySelector('#nav').innerHTML = data
+      }
+
+      menu()
+    </script>
+  </body>
+</html>
